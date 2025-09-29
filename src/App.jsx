@@ -6,6 +6,8 @@ import { TextField } from "./components/TextField";
 const App = () => {
   const [count, setCount] = useState(0)
   const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   const CARDS = [
     {
@@ -30,7 +32,7 @@ const App = () => {
   const handleSubmit = event => {
     event.preventDefault()
 
-    console.log({ name })
+    console.log({ name,email,password })
   }
 
 
@@ -62,11 +64,34 @@ const App = () => {
         <TextField
           id="name"
           name="fullName"
+          placeholder="Nome completo"
           label="Nome Completo"
           type="text"
           value={name}
           onChange={event => setName(event.target.value)}
         />
+
+
+        <TextField
+          id="email"
+          name="email"
+          placeholder="Digite Seu Email"
+          label="Digite Seu Email"
+          type="email"
+          value={email}
+          onChange={event => setEmail(event.target.value)}
+        />
+
+        <TextField
+          id="password"
+          name="password"
+          placeholder="Digite Sua Senha"
+          label="Digite Sua Senha"
+          type="password"
+          value={password}
+          onChange={event => setPassword(event.target.value)}
+        />
+
 
       <button 
         type="submit" 
